@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <title>iNeXT Settings</title>
+    <style>
+		body {
+			min-width: 280px;
+			overflow-x: hidden;
+			font-family: 'Arial', sans-serif;
+			color: #565656 !important;
+			padding: 5px;
+			text-align: center;
+		}
+		
+		section {
+			width: 100%;
+			position: relative;
+		}
+		
+		section.footer {
+			font-size: 13px;
+			color: #918f8f
+		}
+		
+		span.group {
+			display: block;
+			margin: 0 auto;
+			text-align: center;
+		}
+		
+		h3 {
+			text-align: center;
+		}
+		
+		label {
+			font-size: 16px;
+			display: inline-block;
+			margin: 0;
+		}
+		input {
+			display: inline-block;
+			line-height: 16px;
+			font-size: 16px;
+			padding: 10px;
+			background-color: rgba(0,0,0,0.05);
+			color: #565656;
+			outline: none;
+			border: none;
+			border-bottom: 4px solid rgba(0,0,0,.13);
+			width: 145px;
+			margin-left: 10px;
+		}
+		input:active {
+			color: green;
+		}
+		
+		hr {
+			border: none;
+			border-top: 1px solid #ebebeb;
+			margin: 20px 0 15px;
+		}
+		
+		button {
+			 display: block;
+		    margin: 15px auto;
+		    padding: 0 20px;
+		    height: 40px;
+		    border: 2px solid #5da6ff;
+		    border-radius: 4px;
+		    background: transparent;
+		    color: #2a7adc;
+		    letter-spacing: 1px;
+		    font-size: 14px;
+		    -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+		    transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+		    cursor: pointer;
+		}
+		
+		button:hover {
+			background-color: #5da6ff;
+		    color: #fff;
+		}
+		
+		button:focus {
+		    outline: none;
+		}
+	      
+    </style>
+	
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+  
+  <section>
+  <h3>Settings</h3>
+  <span class="group">
+  	<label for="ipaddress">iNeXT IP:</h4>
+  	<input type="text" id="ipaddress" name="ipaddress" value=""/>
+  </span>
+  <button id="save"><span>Save</span></button>
+  
+  </section>
+  
+  <hr />
+  
+  <section class="footer">
+  <span>iNeXT HD LTD. All rights reserved</span>
+  </section>
+  
+  </body>
+</html>
+

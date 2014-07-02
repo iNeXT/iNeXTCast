@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+
+  "name": "iNeXT Cast",
+  "description": "Send video from several web-sites to your iNeXT Media Player.",
+  "version": "1.0",
+  
+  "background": {
+      "page": "background.html"
+   },
+   
+  "permissions": [ "cookies", "http://*/*", "https://*/*", "unlimitedStorage", "contextMenus", "tabs", "storage" ],
+  
+  "browser_action": {
+    "default_icon": "icon19.png",
+    "default_popup": "popup.html"
+  },
+  "icons": { 
+  	"16": "icon19.png",
+	"48": "icon48.png",
+	"128": "icon128.png" 
+  },
+  "content_scripts": [
+      {
+      	"all_frames": false,
+        "matches": ["http://www.ex.ua/*", "http://brb.to/*"],
+        "js": ["js/jquery-2.1.1.min.js", "js/inject.js"],
+		"run_at": "document_start"
+      }
+    ]
+}
