@@ -2,7 +2,7 @@
 var plugin = (function () {
 			
 	// private
-	var playableFiles = ['avi', 'mkv', 'm2ts', 'ts', 'mpg'];
+	var playableFiles = ['avi', 'mkv', 'm2ts', 'ts', 'mpg', 'mp3','ogg', 'jpg', 'jpeg', 'png'];
 	
 	// public
 	return {
