@@ -1,5 +1,3 @@
-var VERSION = "1.1.36";
-
 function log(msg) {
     console.log(msg);
 }
@@ -8,6 +6,7 @@ function insertScript(url, preload, sourceTabId) {
     var i, item, scripts = [];
     
 	url = url.replace("www.", "") + '.js';
+	console.log("inject " + url);
     if (!preload) {
 	    scripts.push({
 	        filename: url,

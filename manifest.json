@@ -3,13 +3,13 @@
 
   "name": "iNeXT Cast",
   "description": "Send video from several web-sites to your iNeXT Media Player.",
-  "version": "1.0",
+  "version": "1.1",
   
   "background": {
       "page": "background.html"
    },
    
-  "permissions": [ "cookies", "http://*/*", "https://*/*", "unlimitedStorage", "contextMenus", "tabs", "storage" ],
+  "permissions": [ "http://*/*", "https://*/*", "unlimitedStorage", "contextMenus", "tabs", "storage" ],
   
   "browser_action": {
     "default_icon": "icon19.png",
@@ -23,7 +23,7 @@
   "content_scripts": [
       {
       	"all_frames": false,
-        "matches": ["http://www.ex.ua/*", "http://brb.to/*"],
+        "matches": ["http://www.ex.ua/*", "http://brb.to/*", "http://www.youtube.com/*", "https://www.youtube.com/*", "http://youtube.com/*", "https://youtube.com/*"],
         "js": ["js/jquery-2.1.1.min.js", "js/inject.js"],
 		"run_at": "document_start"
       }
