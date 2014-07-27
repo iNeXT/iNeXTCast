@@ -16,7 +16,7 @@ function getQueryVariable(variable) {
 if (getQueryVariable('v') != false && getQueryVariable('v') != "") {
 */
 	$href = document.URL;
-	$("#yt-masthead-user").prepend('<span id="appbar-onebar-upload-group"><a href="'+$href+'" class="yt-uix-button   yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-default youtuberedirect" data-sessionlink="ei=H3rPU-qhA8X8igaQxYDADw&amp;feature=mhsb" id="upload-btn" data-upsell="upload"><span class="yt-uix-button-content">Play on iNeXT </span></a></span>');
+	$("#yt-masthead-user").prepend('<span id="appbar-onebar-upload-group"><a href="'+$href+'" class="yt-uix-button   yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-default playoninext" data-sessionlink="ei=H3rPU-qhA8X8igaQxYDADw&amp;feature=mhsb" id="upload-btn" data-upsell="upload"><span class="yt-uix-button-content">Play on iNeXT </span></a></span>');
 	plugin.readyToServe();
 
 //}
