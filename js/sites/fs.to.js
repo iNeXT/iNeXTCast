@@ -22,7 +22,7 @@ function scan(obj) {
 			return true;
 		
 		var ext;
-		console.log(">>> title=" + title + " href=" + href);
+		//console.log(">>> title=" + title + " href=" + href);
 		//return;
 		// get extension from title
 		var matches = (new RegExp('\\.([^\\.]+)$')).exec(title);
@@ -42,7 +42,7 @@ function scan(obj) {
 	
 }
 $(".b-files-folders").bind("DOMSubtreeModified", function() {
-   console.log("###################################");
+   //console.log("###################################");
    scan($(this));
 });
 //setInterval(scan, 10000);
