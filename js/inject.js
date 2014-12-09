@@ -1,8 +1,38 @@
 
 var plugin = (function () {
-			
+	
 	// private
-	var playableFiles = ['avi', 'mkv', 'm2ts', 'ts', 'mpg', 'mp3','ogg', 'jpg', 'jpeg', 'png'];
+	var bishoprockAPIEndpoint = "http://inextapi.com/stb/1/bishoprock/save/";
+	var clientID = 2;
+	var playableFiles = ['avi', 'mkv', 'm2ts', 'ts', 'mpg', 'mp4', 'mp3','ogg', 'flac'];
+	
+	
+	function sendToBishoprockAPI(location, url, data, callback) {
+		$.ajax({
+		  type: "POST",
+		  url: bishoprockAPIEndpoint,
+		  data: { client: clientID, location_url: location, file_url: url, additional_data: data},
+		}).done(function( data ) {
+			if ( console && console.log ) {
+				console.log( "Bishoprock response: " + data );
+			}
+			callback(data);
+		});
+	}
+	
+	function sendBishoprockComandToPlayer(requestid) {
+		chrome.storage.local.get({
+			ipaddress: '192.168.1.100'
+		}, function(items) {
+			url = "http://" + items.ipaddress + "/rc/rc.php?do=br&cmd=" + requestid;
+			$.ajax({
+			  type: "GET",
+			  url: url
+			}).done(function( data ) {
+				
+			});
+		});
+	}
 	
 	// public
 	return {
@@ -39,17 +69,7 @@ var plugin = (function () {
 			$('a.playoninext').click(function(event){
 				event.preventDefault();
 				var link = $(this).attr('href');
-				
-				chrome.storage.local.get({
-					ipaddress: '192.168.1.100'
-				}, function(items) {
-					$.ajax({
-					  type: "GET",
-					  url: "http:" + "//" + items.ipaddress + "/rc/rc.php",
-					  data: { do: "play", file: window.location.protocol + "//" + window.location.hostname + link },
-					  dataType: "jsonp",
-					});
-				});
+				sendToBishoprockAPI(document.URL, link, '', function(data){sendBishoprockComandToPlayer(data)});
 				
 			});
 			
